@@ -1,29 +1,20 @@
-(function () {
-
-  var global = global || this || self || window;
+(function() {
+  var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
-  var ARRAY_PROTO = Array.prototype;
 
-  nx.without = function (inArray) {
-
+  nx.without = function(inArray) {
     var result = [];
     var arg1 = arguments[1];
-    var args_ = Array.isArray(arg1) ? arg1 : ARRAY_PROTO.slice.call(arguments, 1);
-
-    for (var index = 0; index < inArray.length; index++) {
-      var element = inArray[index];
-      if( args_.indexOf(element) === -1 ){
-        result.push( element );
+    var args_ = Array.isArray(arg1) ? arg1 : nx.slice(arguments, 1);
+    nx.forEach(inArray, function(value) {
+      if (args_.indexOf(value) === -1) {
+        result.push(value);
       }
-    }
-
+    });
     return result;
-
   };
-
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = nx.without;
   }
-
-}());
+})();

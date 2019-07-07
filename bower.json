@@ -1,6 +1,7 @@
 {
   "name": "next-without",
-  "description": "Returns the new array of filtered values.",
+  "version": "0.0.1",
+  "description": "Returns the new array of filtered values",
   "main": "dist/next-without.js",
   "authors": [
     "afei"
@@ -19,6 +20,7 @@
     "bower_components",
     "test",
     "tests",
+    "build",
     "src",
     "gulp",
     "gulpfile.js"
