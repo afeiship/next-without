@@ -1,5 +1,5 @@
 # next-without
-> Returns the new array of filtered values
+> Returns the new array of filtered values.
 
 ## installation
 ```bash
